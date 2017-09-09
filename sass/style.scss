@@ -105,7 +105,8 @@ input.custom-submit-input {
     color: $white;
     background: $grass;
     border: none;
-    border-radius: 5px;
+    border-radius: 30px;
+    // border-radius: 5px;
     width: 140px;
     padding: 10px;
     margin: 5px 0 20px 0;
@@ -116,4 +117,13 @@ input.custom-submit-input {
         transition: all 1s ease;
         background: #1cb870;
     }
+}
+
+img.show-me-nicolas-cage {
+    position: absolute;
+}
+
+
+img.show-me-dancing-mushrooms {
+    position: absolute;
 }

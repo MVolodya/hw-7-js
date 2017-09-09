@@ -1,19 +1,17 @@
-/*
-        <form name="login" action="google.com">
-           <input type="text" name="age">
-           <input type="text" name="username">
-           <input type="text" name="date">
-           <input type="submit" value="Validate Me">
-        </form>
-*/
 
 
 let body = document.querySelector('body');
 body.appendChild(createText());
+body.appendChild(showNicolasCage());
+body.appendChild(showDancingMushrooms());
+
+
 
 function createForm() {
 
     let form = document.createElement('form');
+
+    let textForm = document.createTextNode("Form for validation");
 
     //input Age
     let labelAge = document.createElement('label');
@@ -34,13 +32,11 @@ function createForm() {
 
     let h2 = document.createElement("h2");
 
-    let textForm = document.createTextNode("Form for validation");
-
     h2.className = 'form-title';
     h2.appendChild(textForm);
 
     form.setAttribute('name', 'login');
-    //form.setAttribute('action', 'google.com');
+    form.setAttribute('action', 'google.com');
 
     //setAttribute for input Age
     labelAge.setAttribute('for','age');
@@ -115,15 +111,40 @@ function createText() {
     return divContainer;
 }
 
-//let te = document.querySelectorAll('input[type=text]')
-//let tcc = document.querySelector('input[type=submit]').addEventListener('click',functionName());
 
-function functionName() {
-    //show me nicolas cage
-    // test    inputSubmit.setAttribute('onclick','functionName()');
-    let te = document.querySelectorAll('input[type=text]');
 
-    let tes = document.createTextNode(te);
-    console.log('ff',te);
-    alert(1);
+let submitClick = document.querySelector('input[type=submit]');
+submitClick.onclick = findHiddenText; //submitClick.setAttribute('onclick',findHiddenText()); = Dnt work, why ?
+
+function findHiddenText() {
+    let inputTextValue = document.querySelectorAll('input[type=text]');
+
+    for (let i = 0; i < inputTextValue.length; i++)
+    {
+        if (inputTextValue[i].value == "show me nicolas cage") {
+                let valueNicolasCage = inputTextValue[i].value;
+                console.log('IAM nicolas', valueNicolasCage);
+            }
+            else if (inputTextValue[i].value == "show me dancing mushrooms") {
+                let valueDancingMushrooms = inputTextValue[i].value;
+                console.log('IAM mushrooms', valueDancingMushrooms);
+            }
+    }
+}
+
+
+function showNicolasCage() {
+    let imgNicolasCage = document.createElement('img');
+    imgNicolasCage.className = 'show-me-nicolas-cage';
+    //imgNicolasCage.setAttribute('src','img/img_show_nicolas_cage.png');
+
+    return imgNicolasCage;
+}
+
+function showDancingMushrooms() {
+    let imgDancingMushrooms = document.createElement('img');
+    imgDancingMushrooms.className = 'show-me-dancing-mushrooms';
+    //imgDancingMushrooms.setAttribute('src','img/gif_show_dancing_mushrooms.gif');
+
+    return imgDancingMushrooms;
 }
