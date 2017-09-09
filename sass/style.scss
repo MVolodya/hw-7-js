@@ -40,6 +40,20 @@ h1 {
     font-size: 32px;
     font-weight: 700;
 }
+h2.form-title{
+    margin: 20px 0 40px 0;
+    position : relative;
+
+    &:after {
+        content: '';
+        width: 40px;
+        height: 2px;
+        background-color: #161616;
+        position: absolute;
+        bottom: -15px;
+        left: 0;
+    }
+}
 
 p {
     max-width: 460px;
@@ -58,9 +72,8 @@ form {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    height: 300px;
     width: 400px;
-    margin: 10px;
+    margin: 20px;
     padding: 15px 30px;
     background: $white;
     border-radius: 3px;
@@ -73,9 +86,19 @@ form {
 
 }
 
+label {
+    color: rgba($dark, .6);
+}
 input {
-    margin: 10px 0;
-    padding: 10px;
+    font-family: $font-family;
+}
+
+input[type="text"] {
+    margin: 3px 0 20px 0;
+    padding: 10px 0 5px 0;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #bebebe;
 }
 
 input.custom-submit-input {
@@ -84,6 +107,8 @@ input.custom-submit-input {
     border: none;
     border-radius: 5px;
     width: 140px;
+    padding: 10px;
+    margin: 5px 0 20px 0;
     //text-transform: uppercase;
     cursor: pointer;
 
