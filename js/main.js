@@ -2,8 +2,8 @@
 
 let body = document.querySelector('body');
 body.appendChild(createText());
-body.appendChild(showNicolasCage());
-body.appendChild(showDancingMushrooms());
+body.appendChild(createNicolasCage());
+// body.appendChild(showDancingMushrooms());
 
 
 
@@ -114,7 +114,7 @@ function createText() {
 
 
 let submitClick = document.querySelector('input[type=submit]');
-submitClick.onclick = findHiddenText; //submitClick.setAttribute('onclick',findHiddenText()); = Dnt work, why ?
+submitClick.addEventListener('click', findHiddenText);
 
 function findHiddenText() {
     let inputTextValue = document.querySelectorAll('input[type=text]');
@@ -122,8 +122,14 @@ function findHiddenText() {
     for (let i = 0; i < inputTextValue.length; i++)
     {
         if (inputTextValue[i].value == "show me nicolas cage") {
-                let valueNicolasCage = inputTextValue[i].value;
-                console.log('IAM nicolas', valueNicolasCage);
+                let valueNicolasCage = document.querySelector('.show-me-nicolas-cage');
+                event.preventDefault();
+                setTimeout(function() {
+                    valueNicolasCage.classList.remove('active');
+                    console.log('valueNicolasCage', valueNicolasCage);
+                //    alert(1);
+                }, 1000, valueNicolasCage.classList.add('active'));
+            //    alert(2);
             }
             else if (inputTextValue[i].value == "show me dancing mushrooms") {
                 let valueDancingMushrooms = inputTextValue[i].value;
@@ -133,15 +139,15 @@ function findHiddenText() {
 }
 
 
-function showNicolasCage() {
+function createNicolasCage() {
     let imgNicolasCage = document.createElement('img');
     imgNicolasCage.className = 'show-me-nicolas-cage';
-    //imgNicolasCage.setAttribute('src','img/img_show_nicolas_cage.png');
+    imgNicolasCage.setAttribute('src','img/img_show_nicolas_cage.png');
 
     return imgNicolasCage;
 }
 
-function showDancingMushrooms() {
+function createDancingMushrooms() {
     let imgDancingMushrooms = document.createElement('img');
     imgDancingMushrooms.className = 'show-me-dancing-mushrooms';
     //imgDancingMushrooms.setAttribute('src','img/gif_show_dancing_mushrooms.gif');

@@ -24,6 +24,8 @@ body {
     font-size: 16px;
     font-weight: 700;
     line-height: 1;
+    overflow: hidden;
+    overflow-y: auto;
 }
 
 .container {
@@ -121,8 +123,12 @@ input.custom-submit-input {
 
 img.show-me-nicolas-cage {
     position: absolute;
+    right: -365px;
+    bottom: 0;
 }
-
+img.show-me-nicolas-cage.active {
+    right: -60px;
+}
 
 img.show-me-dancing-mushrooms {
     position: absolute;
