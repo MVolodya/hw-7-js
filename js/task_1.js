@@ -146,7 +146,8 @@ function isNumber(inputAge) {
 }
 
 function isUsername(inputUsername) {
-    let regexpValueUsername = /^user_(([0-9a-z-]+)?([@])?[0-9a-z-]+\.[a-z]+)?\w+$/;
+    //let regexpValueUsername = /^user_(([0-9a-z-]+)?([@])?[0-9a-z-]+\.[a-z]+)?\w+$/;
+    let regexpValueUsername = /^user_\S.+?$/;
     let checkValueUsername = regexpValueUsername.test(inputUsername) ? true : false;
     return checkValueUsername;
 }
