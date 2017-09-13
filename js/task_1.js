@@ -3,6 +3,17 @@
 let body = document.querySelector('body');
 body.appendChild(createText());
 
+let submitClick = document.querySelector('input[type=submit]');
+submitClick.addEventListener('click', function(event) {
+        event.preventDefault();
+        if (!inputValidation()) {
+            alert('Oops, your validation is invalid');
+        }
+        else {
+            alert('You are welcome, your validation is valid');
+        }
+});
+
 function createForm() {
 
     let form = document.createElement('form');
@@ -43,7 +54,6 @@ function createForm() {
     inputAge.setAttribute('name','age');    //inputAge.name='age';
     inputAge.setAttribute('id','age');
     inputAge.setAttribute('value','20');
-    inputAge.setAttribute('autofocus', '');
 
     //setAttribute for input Username
     labelUsername.setAttribute('for','username');
@@ -85,12 +95,11 @@ function createForm() {
 }
 
 function createText() {
-
     let divContainer = document.createElement('div');
     let divFormContainer = document.createElement('div');
     let h1 = document.createElement("h1");
     let p = document.createElement("p");
-    let textTitle = document.createTextNode("Volodymyr Medvid");
+    let textTitle = document.createTextNode("Task 1");
     let textDescription = document.createTextNode("Do you like some jokes?");
 
     divContainer.setAttribute('class', 'container');
@@ -108,7 +117,6 @@ function createText() {
     return divContainer;
 }
 
-inputValidation()
 function inputValidation() {
     let inputAge = document.querySelector('#age').value;
     let inputUsername = document.querySelector('#username').value;
@@ -122,23 +130,41 @@ function inputValidation() {
     console.log("inputUsername", inputUsername);
     console.log("inputDate", inputDate);
 
-    //alert(inputAge);
+    if (!inputAge)      { alert("Sorry, you entered invalid age");}
+    if (!inputUsername) { alert("Sorry, you entered invalid username");}
+    if (!inputDate)     { alert("Sorry, you entered invalid date");}
+
+    let checkingValidation = (inputAge && inputUsername && inputDate) ? true : false;
+
+    return checkingValidation;
 }
 
 function isNumber(inputAge) {
-    let regexpValueAge = /^[0-9]\d*$/;
-    let checkValueAge = (regexpValueAge.test(inputAge) && (inputAge >= 0)) ? true : (alert("Sorry, you entered invalid age"), false);
+    let regexpValueAge = /^\d+$/;
+    let checkValueAge = (regexpValueAge.test(inputAge) && (inputAge >= 0)) ? true : false;
     return checkValueAge;
 }
 
 function isUsername(inputUsername) {
     let regexpValueUsername = /^user_(([0-9a-z-]{1,})?([@])?[0-9a-z-]{2,}\.[a-z]{2,})?\w+$/;
-    let checkValueUsername = regexpValueUsername.test(inputUsername) ? true : (alert("Sorry, you entered invalid username"), false);
+    let checkValueUsername = regexpValueUsername.test(inputUsername) ? true : false;
     return checkValueUsername;
 }
+
 function isCurrentDate(inputDate) {
     let regexpValueDate = /^\d{2}\/\d{2}\/\d{4}$/;
-    return regexpValueDate.test(inputDate);
+    let checkedValueDate = false;
+    let currentDate = new Date();
+
+    if (regexpValueDate.test(inputDate)) {
+        let splitValueDate = inputDate.split('/')
+        console.log('splitValueDate',splitValueDate);
+        checkedValueDate = (splitValueDate[0] == currentDate.getDate() &&
+                                splitValueDate[1] == currentDate.getMonth()+1 &&
+                                splitValueDate[2] == currentDate.getFullYear());
+        console.log('checkedValueDate',checkedValueDate);
+    }
+    return checkedValueDate;
 }
 
 function generateCurrentDate() {
@@ -151,6 +177,7 @@ function generateCurrentDate() {
     mm = mm < 10 ? (mm = "0" + mm) : (mm);
 
     currentDate = dd + "/" + mm +"/"+ yyyy;
+
     console.log(currentDate);
     return currentDate;
 }
