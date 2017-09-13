@@ -42,7 +42,7 @@ function createForm() {
     inputAge.setAttribute('type','text');   //inputAge.type='text';
     inputAge.setAttribute('name','age');    //inputAge.name='age';
     inputAge.setAttribute('id','age');
-    inputAge.setAttribute('value','asd');
+    inputAge.setAttribute('value','20');
     inputAge.setAttribute('autofocus', '');
 
     //setAttribute for input Username
@@ -63,7 +63,7 @@ function createForm() {
     inputDate.setAttribute('type','text');
     inputDate.setAttribute('name','date');
     inputDate.setAttribute('id','date');
-    inputDate.setAttribute('value','date');
+    inputDate.setAttribute('value', generateCurrentDate());
 
     //setAttribute for input Submit
     inputSubmit.className = 'custom-submit-input';
@@ -115,23 +115,42 @@ function inputValidation() {
     let inputDate = document.querySelector('#date').value;
 
     inputAge = isNumber(inputAge);
-    inputUsername = isUsername(inputUsername)
-
-    
-    console.log("hhhh", inputUsername);
     inputUsername = isUsername(inputUsername);
-    console.log("hhhh", inputUsername);
+    inputDate = isCurrentDate(inputDate);
+
+    console.log("inputAge", inputAge);
+    console.log("inputUsername", inputUsername);
+    console.log("inputDate", inputDate);
+
     //alert(inputAge);
 }
 
 function isNumber(inputAge) {
     let regexpValueAge = /^[0-9]\d*$/;
-    let checkValueAge = ((regexpValueAge.test(inputAge)) && (inputAge >= 0)) ? 'true' : alert('Sorry, please enter a valid age');
+    let checkValueAge = (regexpValueAge.test(inputAge) && (inputAge >= 0)) ? true : (alert("Sorry, you entered invalid age"), false);
     return checkValueAge;
 }
 
 function isUsername(inputUsername) {
     let regexpValueUsername = /^user_(([0-9a-z-]{1,})?([@])?[0-9a-z-]{2,}\.[a-z]{2,})?\w+$/;
-    let checkValueUsername = regexpValueUsername.test(inputUsername) ? 'true' : alert('Sorry, please enter a valid username');
+    let checkValueUsername = regexpValueUsername.test(inputUsername) ? true : (alert("Sorry, you entered invalid username"), false);
     return checkValueUsername;
+}
+function isCurrentDate(inputDate) {
+    let regexpValueDate = /^\d{2}\/\d{2}\/\d{4}$/;
+    return regexpValueDate.test(inputDate);
+}
+
+function generateCurrentDate() {
+    let currentDate = new Date();
+    let dd = currentDate.getDate();
+    let mm = currentDate.getMonth()+1; // The getMonth() method returns the month (from 0 to 11) for the specified date, according to local time.
+    let yyyy = currentDate.getFullYear();
+
+    dd = dd < 10 ? (dd = "0" + dd) : (dd);
+    mm = mm < 10 ? (mm = "0" + mm) : (mm);
+
+    currentDate = dd + "/" + mm +"/"+ yyyy;
+    console.log(currentDate);
+    return currentDate;
 }
