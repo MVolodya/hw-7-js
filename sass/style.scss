@@ -10,7 +10,7 @@ $coal: #202129;
 $coal-dust: #dedede;
 
 $white: #FFFFFF;
-$grey: #F5F5F5;
+$grey: #fbfbfb;
 
 $font-family: 'Roboto', sans-serif;
 
@@ -45,6 +45,7 @@ h1 {
 h2.form-title{
     margin: 20px 0 40px 0;
     position : relative;
+
 
     &:after {
         content: '';
@@ -101,6 +102,11 @@ input[type="text"] {
     outline: none;
     border: none;
     border-bottom: 1px solid #bebebe;
+    transition: all 0.5s linear;
+
+    &:focus {
+        border-bottom: 1px solid $grass;
+    }
 }
 
 input.custom-submit-input {
@@ -119,17 +125,4 @@ input.custom-submit-input {
         transition: all 1s ease;
         background: #1cb870;
     }
-}
-
-img.show-me-nicolas-cage {
-    position: absolute;
-    right: -365px;
-    bottom: 0;
-}
-img.show-me-nicolas-cage.active {
-    right: -60px;
-}
-
-img.show-me-dancing-mushrooms {
-    position: absolute;
 }

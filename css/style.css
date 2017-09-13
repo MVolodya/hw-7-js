@@ -2,7 +2,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #F5F5F5;
+  background: #fbfbfb;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   font-weight: 700;
@@ -73,7 +73,10 @@ input[type="text"] {
   padding: 10px 0 5px 0;
   outline: none;
   border: none;
-  border-bottom: 1px solid #bebebe; }
+  border-bottom: 1px solid #bebebe;
+  transition: all 0.5s linear; }
+  input[type="text"]:focus {
+    border-bottom: 1px solid #3dd28d; }
 
 input.custom-submit-input {
   color: #FFFFFF;
@@ -87,14 +90,3 @@ input.custom-submit-input {
   input.custom-submit-input:hover {
     transition: all 1s ease;
     background: #1cb870; }
-
-img.show-me-nicolas-cage {
-  position: absolute;
-  right: -365px;
-  bottom: 0; }
-
-img.show-me-nicolas-cage.active {
-  right: -60px; }
-
-img.show-me-dancing-mushrooms {
-  position: absolute; }

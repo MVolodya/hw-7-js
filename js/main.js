@@ -2,10 +2,6 @@
 
 let body = document.querySelector('body');
 body.appendChild(createText());
-body.appendChild(createNicolasCage());
-// body.appendChild(showDancingMushrooms());
-
-
 
 function createForm() {
 
@@ -46,7 +42,7 @@ function createForm() {
     inputAge.setAttribute('type','text');   //inputAge.type='text';
     inputAge.setAttribute('name','age');    //inputAge.name='age';
     inputAge.setAttribute('id','age');
-    inputAge.setAttribute('placeholder','20');
+    inputAge.setAttribute('value','asd');
     inputAge.setAttribute('autofocus', '');
 
     //setAttribute for input Username
@@ -57,7 +53,7 @@ function createForm() {
     inputUsername.setAttribute('type','text');
     inputUsername.setAttribute('name','username');
     inputUsername.setAttribute('id','username');
-    inputUsername.setAttribute('placeholder','user_volodymyr');
+    inputUsername.setAttribute('value','user_volodymyr');
 
     //setAttribute for input Date
     labelDate.setAttribute('for','date');
@@ -67,7 +63,7 @@ function createForm() {
     inputDate.setAttribute('type','text');
     inputDate.setAttribute('name','date');
     inputDate.setAttribute('id','date');
-    inputDate.setAttribute('placeholder','date');
+    inputDate.setAttribute('value','date');
 
     //setAttribute for input Submit
     inputSubmit.className = 'custom-submit-input';
@@ -108,49 +104,34 @@ function createText() {
     divFormContainer.appendChild(createForm());
 
     console.log('divContainer', divContainer);
+
     return divContainer;
 }
 
+inputValidation()
+function inputValidation() {
+    let inputAge = document.querySelector('#age').value;
+    let inputUsername = document.querySelector('#username').value;
+    let inputDate = document.querySelector('#date').value;
 
+    inputAge = isNumber(inputAge);
+    inputUsername = isUsername(inputUsername)
 
-let submitClick = document.querySelector('input[type=submit]');
-submitClick.addEventListener('click', findHiddenText);
-
-function findHiddenText() {
-    let inputTextValue = document.querySelectorAll('input[type=text]');
-
-    for (let i = 0; i < inputTextValue.length; i++)
-    {
-        if (inputTextValue[i].value == "show me nicolas cage") {
-                let valueNicolasCage = document.querySelector('.show-me-nicolas-cage');
-                event.preventDefault();
-                setTimeout(function() {
-                    valueNicolasCage.classList.remove('active');
-                    console.log('valueNicolasCage', valueNicolasCage);
-                //    alert(1);
-                }, 1000, valueNicolasCage.classList.add('active'));
-            //    alert(2);
-            }
-            else if (inputTextValue[i].value == "show me dancing mushrooms") {
-                let valueDancingMushrooms = inputTextValue[i].value;
-                console.log('IAM mushrooms', valueDancingMushrooms);
-            }
-    }
+    
+    console.log("hhhh", inputUsername);
+    inputUsername = isUsername(inputUsername);
+    console.log("hhhh", inputUsername);
+    //alert(inputAge);
 }
 
-
-function createNicolasCage() {
-    let imgNicolasCage = document.createElement('img');
-    imgNicolasCage.className = 'show-me-nicolas-cage';
-    imgNicolasCage.setAttribute('src','img/img_show_nicolas_cage.png');
-
-    return imgNicolasCage;
+function isNumber(inputAge) {
+    let regexpValueAge = /^[0-9]\d*$/;
+    let checkValueAge = ((regexpValueAge.test(inputAge)) && (inputAge >= 0)) ? 'true' : alert('Sorry, please enter a valid age');
+    return checkValueAge;
 }
 
-function createDancingMushrooms() {
-    let imgDancingMushrooms = document.createElement('img');
-    imgDancingMushrooms.className = 'show-me-dancing-mushrooms';
-    //imgDancingMushrooms.setAttribute('src','img/gif_show_dancing_mushrooms.gif');
-
-    return imgDancingMushrooms;
+function isUsername(inputUsername) {
+    let regexpValueUsername = /^user_(([0-9a-z-]{1,})?([@])?[0-9a-z-]{2,}\.[a-z]{2,})?\w+$/;
+    let checkValueUsername = regexpValueUsername.test(inputUsername) ? 'true' : alert('Sorry, please enter a valid username');
+    return checkValueUsername;
 }
