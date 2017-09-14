@@ -1,7 +1,7 @@
 $dark:  #161616;
 $ocean:  #416dea;
 $grass: #3dd28d;
-
+$sun: #feee7d;
 $salmon: #F32C52;
 $sun: #feee7d;
 $alge: #7999a9;
@@ -125,4 +125,24 @@ input.custom-submit-input {
         transition: all 1s ease;
         background: #1cb870;
     }
+}
+
+//------------TASK 2 ---------------
+h1.h1-parallax {
+    margin: 0;
+}
+
+.content {
+    background: blue;
+    height: 550px;
+}
+
+#parallax {
+    background: red;
+    background: url(http://www.verticalworld.net/school/programs/uploads/pics/program_108_1.jpg);
+    height: 150px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
