@@ -146,3 +146,10 @@ h1.h1-parallax {
     background-repeat: no-repeat;
     background-size: cover;
 }
+//------------TASK 3 ---------------
+.download-message {
+  display: none;
+}
+.download-message.active {
+  display: block;
+}

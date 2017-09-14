@@ -106,3 +106,9 @@ h1.h1-parallax {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; }
+
+.download-message {
+  display: none; }
+
+.download-message.active {
+  display: block; }
