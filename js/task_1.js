@@ -102,15 +102,27 @@ function createText() {
     let textTitle = document.createTextNode("Task 1");
     let textDescription = document.createTextNode("Do you like some jokes?");
 
+    let divButtonContainer = document.createElement('div');
+    let myAnchor = document.createElement('a');
+    let textButton = document.createTextNode("Back");
+
+    divButtonContainer.setAttribute('class', 'button-container');
     divContainer.setAttribute('class', 'container');
     divFormContainer.setAttribute('class', 'form-container');
+    myAnchor.setAttribute('href', '../index.html');
+    myAnchor.setAttribute('class', 'button button-back button-task-1');
+
+
 
     h1.appendChild(textTitle);
     p.appendChild(textDescription);
+    myAnchor.appendChild(textButton);
     divContainer.appendChild(h1);
     divContainer.appendChild(p);
     divContainer.appendChild(divFormContainer);
     divFormContainer.appendChild(createForm());
+    divButtonContainer.appendChild(myAnchor);
+    divContainer.appendChild(divButtonContainer);
 
     console.log('divContainer', divContainer);
 

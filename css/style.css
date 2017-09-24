@@ -38,7 +38,7 @@ h2.form-title {
 p {
   max-width: 460px;
   margin: 0 auto;
-  text-align: center;
+  text-align: justify;
   color: rgba(22, 22, 22, 0.6);
   font-weight: 400;
   line-height: 1.5; }
