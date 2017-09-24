@@ -26,13 +26,13 @@ body {
     line-height: 1;
     overflow: hidden;
     overflow-y: auto;
+    margin: 0;
 }
 
 .container {
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 20px;
 }
 
 h1 {
@@ -79,7 +79,7 @@ form {
     margin: 20px;
     padding: 15px 30px;
     background: $white;
-    border-radius: 3px;
+    border-radius: 5px;
     box-shadow: 0 5px 5px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 
@@ -113,7 +113,7 @@ input.custom-submit-input {
     color: $white;
     background: $grass;
     border: none;
-    border-radius: 30px;
+    border-radius: 5px;
     // border-radius: 5px;
     width: 140px;
     padding: 10px;
@@ -128,19 +128,47 @@ input.custom-submit-input {
 }
 
 //------------TASK 2 ---------------
+
+h2.h2-content {
+    font-size: 28px;
+    line-height: 35px;
+}
 h1.h1-parallax {
-    margin: 0;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.50);
 }
 
+p.p-content {
+    font-size: 18px;
+    margin: 0 0 45px 0;
+}
+
+p a {
+    color: $dark;
+}
+
+.content a.button {
+    margin: 0px;
+}
+
+
 .content {
-    background: blue;
-    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 100px;
 }
 
 #parallax {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
     background: red;
-    background: url(http://www.verticalworld.net/school/programs/uploads/pics/program_108_1.jpg);
-    height: 150px;
+    background: url(https://images.unsplash.com/photo-1482282375187-a7e57f76026d?dpr=1&auto=compress,format&fit=crop&w=1458&h=&q=80&cs=tinysrgb&crop=);
+    height: 500px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -148,8 +176,156 @@ h1.h1-parallax {
 }
 //------------TASK 3 ---------------
 .download-message {
-  display: none;
+    display: none;
 }
 .download-message.active {
-  display: block;
+    display: block;
+}
+//------------TASK 4 ---------------
+.lang {
+    display: none;
+}
+
+.lang.visible {
+    display: inline;
+    // @todo: visibility? font-size? etc?
+}
+
+//------------TASK 5 ---------------
+#box1 {
+    background: red;
+    width: 200px; height: 200px;
+}
+
+#box2 {
+    background: green;
+    width: 150px; height: 150px;
+}
+
+#box3 {
+    background: blue;
+    width: 100px; height: 100px;
+}
+
+//------------Index ---------------
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    text-align: center;
+    width: 100px;
+    margin: 10px;
+    padding: 10px;
+    background: red;
+    position: relative;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+
+    &:hover {
+        box-shadow: 0px 5px 14px rgba(0, 0, 0, 0.25), 0 0 5px rgba(0, 0, 0, 0.22);
+    }
+}
+.button-go {
+    transition: all 0.2s linear 0s;
+
+    &:before {
+        content: "\f178";
+        font-family: FontAwesome;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        right: 0;
+        top: 0;
+        opacity: 0;
+        height: 100%;
+        width: 40px;
+        transition: all 0.2s linear 0s;
+    }
+
+    &:hover {
+        text-indent: -20px;
+
+        &:before {
+            opacity: 1;
+            text-indent: 0px;
+        }
+    }
+}
+
+.button-back {
+    transition: all 0.2s linear 0s;
+
+    &:before {
+        content: "\f177";
+        font-family: FontAwesome;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        opacity: 0;
+        top: 0;
+        left: 0px;
+        height: 100%;
+        width: 40px;
+        transition: all 0.2s linear 0s;
+    }
+
+    &:hover {
+        text-indent: 20px;
+
+        &:before {
+             opacity: 1;
+             text-indent: 0;
+        }
+    }
+}
+
+.button-task-1 {
+    color: $white;
+    background: $grass;
+    &:hover {
+        transition: all 1s ease;
+        background: #1cb870;
+    }
+}
+.button-task-2 {
+    color: $white;
+    background: $ocean;
+    &:hover {
+        transition: all 1s ease;
+        background: #295cec;
+    }
+}
+.button-task-3 {
+    color: $white;
+    background: $grass;
+    &:hover {
+        transition: all 1s ease;
+        background: #1cb870;
+    }
+}
+.button-task-4 {
+    color: $white;
+    background: $grass;
+    &:hover {
+        transition: all 1s ease;
+        background: #1cb870;
+    }
+}
+.button-task-5 {
+    color: $white;
+    background: $grass;
+    &:hover {
+        transition: all 1s ease;
+        background: #1cb870;
+    }
 }

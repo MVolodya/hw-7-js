@@ -8,13 +8,13 @@ body {
   font-weight: 700;
   line-height: 1;
   overflow: hidden;
-  overflow-y: auto; }
+  overflow-y: auto;
+  margin: 0; }
 
 .container {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  padding: 20px; }
+  width: 100%; }
 
 h1 {
   text-align: center;
@@ -56,7 +56,7 @@ form {
   margin: 20px;
   padding: 15px 30px;
   background: #FFFFFF;
-  border-radius: 3px;
+  border-radius: 5px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
   form:hover {
@@ -82,7 +82,7 @@ input.custom-submit-input {
   color: #FFFFFF;
   background: #3dd28d;
   border: none;
-  border-radius: 30px;
+  border-radius: 5px;
   width: 140px;
   padding: 10px;
   margin: 5px 0 20px 0;
@@ -91,17 +91,39 @@ input.custom-submit-input {
     transition: all 1s ease;
     background: #1cb870; }
 
+h2.h2-content {
+  font-size: 28px;
+  line-height: 35px; }
+
 h1.h1-parallax {
-  margin: 0; }
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.5); }
+
+p.p-content {
+  font-size: 18px;
+  margin: 0 0 45px 0; }
+
+p a {
+  color: #161616; }
+
+.content a.button {
+  margin: 0px; }
 
 .content {
-  background: blue;
-  height: 550px; }
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 100px; }
 
 #parallax {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   background: red;
-  background: url(http://www.verticalworld.net/school/programs/uploads/pics/program_108_1.jpg);
-  height: 150px;
+  background: url(https://images.unsplash.com/photo-1482282375187-a7e57f76026d?dpr=1&auto=compress,format&fit=crop&w=1458&h=&q=80&cs=tinysrgb&crop=);
+  height: 500px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -112,3 +134,121 @@ h1.h1-parallax {
 
 .download-message.active {
   display: block; }
+
+.lang {
+  display: none; }
+
+.lang.visible {
+  display: inline; }
+
+#box1 {
+  background: red;
+  width: 200px;
+  height: 200px; }
+
+#box2 {
+  background: green;
+  width: 150px;
+  height: 150px; }
+
+#box3 {
+  background: blue;
+  width: 100px;
+  height: 100px; }
+
+.button-container {
+  display: flex;
+  justify-content: center; }
+
+.button {
+  text-align: center;
+  width: 100px;
+  margin: 10px;
+  padding: 10px;
+  background: red;
+  position: relative;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+  .button:hover {
+    box-shadow: 0px 5px 14px rgba(0, 0, 0, 0.25), 0 0 5px rgba(0, 0, 0, 0.22); }
+
+.button-go {
+  transition: all 0.2s linear 0s; }
+  .button-go:before {
+    content: "\f178";
+    font-family: FontAwesome;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    height: 100%;
+    width: 40px;
+    transition: all 0.2s linear 0s; }
+  .button-go:hover {
+    text-indent: -20px; }
+    .button-go:hover:before {
+      opacity: 1;
+      text-indent: 0px; }
+
+.button-back {
+  transition: all 0.2s linear 0s; }
+  .button-back:before {
+    content: "\f177";
+    font-family: FontAwesome;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    opacity: 0;
+    top: 0;
+    left: 0px;
+    height: 100%;
+    width: 40px;
+    transition: all 0.2s linear 0s; }
+  .button-back:hover {
+    text-indent: 20px; }
+    .button-back:hover:before {
+      opacity: 1;
+      text-indent: 0; }
+
+.button-task-1 {
+  color: #FFFFFF;
+  background: #3dd28d; }
+  .button-task-1:hover {
+    transition: all 1s ease;
+    background: #1cb870; }
+
+.button-task-2 {
+  color: #FFFFFF;
+  background: #416dea; }
+  .button-task-2:hover {
+    transition: all 1s ease;
+    background: #295cec; }
+
+.button-task-3 {
+  color: #FFFFFF;
+  background: #3dd28d; }
+  .button-task-3:hover {
+    transition: all 1s ease;
+    background: #1cb870; }
+
+.button-task-4 {
+  color: #FFFFFF;
+  background: #3dd28d; }
+  .button-task-4:hover {
+    transition: all 1s ease;
+    background: #1cb870; }
+
+.button-task-5 {
+  color: #FFFFFF;
+  background: #3dd28d; }
+  .button-task-5:hover {
+    transition: all 1s ease;
+    background: #1cb870; }

@@ -161,8 +161,8 @@ function isCurrentDate(inputDate) {
         let splitValueDate = inputDate.split('/')
         console.log('splitValueDate',splitValueDate);
         checkedValueDate = (splitValueDate[0] == currentDate.getDate() &&
-                                splitValueDate[1] == currentDate.getMonth()+1 &&
-                                splitValueDate[2] == currentDate.getFullYear());
+                            splitValueDate[1] == currentDate.getMonth()+1 &&
+                            splitValueDate[2] == currentDate.getFullYear());
         console.log('checkedValueDate',checkedValueDate);
     }
     return checkedValueDate;
