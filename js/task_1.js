@@ -1,5 +1,3 @@
-
-
 let body = document.querySelector('body');
 body.appendChild(createText());
 
@@ -88,8 +86,6 @@ function createForm() {
     form.appendChild(inputDate);
     form.appendChild(inputSubmit);
 
-    console.log('form', form);
-
     return form;
 }
 
@@ -112,7 +108,6 @@ function createText() {
     myAnchor.setAttribute('class', 'button button-back button-task-1');
 
 
-
     h1.appendChild(textTitle);
     //p.appendChild(textDescription);
     myAnchor.appendChild(textButton);
@@ -122,8 +117,6 @@ function createText() {
     divFormContainer.appendChild(createForm());
     divButtonContainer.appendChild(myAnchor);
     divContainer.appendChild(divButtonContainer);
-
-    console.log('divContainer', divContainer);
 
     return divContainer;
 }
@@ -136,10 +129,6 @@ function inputValidation() {
     inputAge      = isNumber(inputAge);
     inputUsername = isUsername(inputUsername);
     inputDate     = isCurrentDate(inputDate);
-
-    console.log("inputAge", inputAge);
-    console.log("inputUsername", inputUsername);
-    console.log("inputDate", inputDate);
 
     if (!inputAge)      { alert("Sorry, you entered invalid age");}
     if (!inputUsername) { alert("Sorry, you entered invalid username");}
@@ -170,11 +159,9 @@ function isCurrentDate(inputDate) {
 
     if (regexpValueDate.test(inputDate)) {
         let splitValueDate = inputDate.split('/')
-        console.log('splitValueDate',splitValueDate);
         checkedValueDate = (splitValueDate[0] == currentDate.getDate() &&
                             splitValueDate[1] == currentDate.getMonth()+1 &&
                             splitValueDate[2] == currentDate.getFullYear());
-        console.log('checkedValueDate',checkedValueDate);
     }
     return checkedValueDate;
 }
@@ -190,6 +177,5 @@ function generateCurrentDate() {
 
     currentDate = dd + "/" + mm +"/"+ yyyy;
 
-    console.log(currentDate);
     return currentDate;
 }

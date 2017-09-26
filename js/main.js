@@ -1,16 +1,12 @@
-
 let allButtons = document.querySelectorAll('[data-task]');
-console.log(allButtons);
-
 
 allButtons.forEach(function (btn) {
-	btn.addEventListener('click', function () {
-		functionName(event);
+	btn.addEventListener('click', function (event) {
+		changeContent(event);
 	});
 });
 
-
-function functionName(event) {
+function changeContent(event) {
 
 	let activeButton = event.target;
 	let dataFromTask = activeButton.dataset.task;
@@ -19,17 +15,17 @@ function functionName(event) {
 	let setContent   = document.querySelectorAll('.task-' + dataFromTask);
 
 	allButtons.forEach(function (btn) {
-		btn.classList.remove('active');
+		btn.classList.remove('visible');
 	});
 
 	content.forEach(function (taskContent) {
-		taskContent.classList.remove('active');
+		taskContent.classList.remove('visible');
 	});
 
-	activeButton.classList.add('active');
+	activeButton.classList.add('visible');
 
 	setContent.forEach(function (setContent) {
-		setContent.classList.add('active');
+		setContent.classList.add('visible');
 	});
 
 }

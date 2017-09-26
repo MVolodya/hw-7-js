@@ -14,7 +14,8 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  width: 100%; }
+  width: 100%;
+  margin-top: 20px; }
 
 h1 {
   text-align: center;
@@ -22,6 +23,11 @@ h1 {
   font-family: "Roboto", sans-serif;
   font-size: 32px;
   font-weight: 700; }
+
+h2 {
+  text-align: center;
+  color: #161616;
+  font-family: "Roboto", sans-serif; }
 
 h2.form-title {
   margin: 20px 0 40px 0;
@@ -93,7 +99,8 @@ input.custom-submit-input {
 
 h2.h2-content {
   font-size: 28px;
-  line-height: 35px; }
+  line-height: 35px;
+  text-align: left; }
 
 h1.h1-parallax {
   padding: 15px;
@@ -133,7 +140,7 @@ p a {
 .download-message {
   display: none; }
 
-.download-message.active {
+.download-message.visible {
   display: block; }
 
 .lang {
@@ -157,10 +164,19 @@ p a {
   width: 100px;
   height: 100px; }
 
+.text-container {
+  margin-top: 60px; }
+
+.line-first,
+.line-second {
+  display: flex; }
+
 .button-container {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap; }
+  align-items: center;
+  flex-direction: column;
+  margin: 15px 0; }
 
 .button {
   text-align: center;
@@ -302,7 +318,7 @@ code {
 .task-content {
   display: none; }
 
-.task-content.active {
+.task-content.visible {
   width: 50%;
   background: #FFFFFF;
   border-radius: 5px;
