@@ -19,53 +19,53 @@ $(document).ready(function() {
   $("input[name=foo_id]:radio").change(fooBar.updateFooName);
 });
 */
-/*
-let applyLanguage = function (lang) {
+
+var applyLanguage = function (lang) {
 	alert('now language is: ' + lang);
 }
 
-let defaultLanguage = 'ua';
-let currentLang = getCurrentLanguage(defaultLanguage);
+var getCurrentLanguage = function () {
+	var savedLang = localStorage.getItem('currentLang');
+	var defaultLanguage = savedLang || 'ua';
+  var checked = document.querySelector('input[type="radio"]:checked');
 
-function getCurrentLanguage(valueFromCheckedButton) {
-	defaultLanguage = valueFromCheckedButton;
-	console.log(defaultLanguage);
-	setUserLanguage(defaultLanguage);
-	applyLanguage(defaultLanguage);
-
-	return defaultLanguage;
+  return checked ? checked.value : defaultLanguage;
 }
 
-function setUserLanguage(getChosenLanguage) {
-	let langEls = document.getElementsByClassName('lang-' + getChosenLanguage);
-	for (let i=0; i<langEls.length; i++) {
-		let langEl = langEls[i];
+var radioButtons = document.querySelectorAll('input[type="radio"]');
+
+radioButtons.forEach(function (btn) {
+	btn.addEventListener('click', function () {
+  	changeLang();
+  });
+});
+
+
+function changeLang() {
+	var currentLang = getCurrentLanguage();
+	var allLang     = document.querySelectorAll('[class*="lang-"]');
+	var langEls     = document.getElementsByClassName('lang-' + currentLang);
+	var btn         = document.querySelector('input[value="' + currentLang + '"]');
+
+	btn.setAttribute('checked', true);
+
+
+	allLang.forEach(function (lang) {
+		lang.classList.remove('visible');
+	});
+
+	for (var i=0; i<langEls.length; i++) {
+		var langEl = langEls[i];
+		// langEl.style.display = 'inline';
 		langEl.classList.add('visible');
 	}
 }
-function unvi() {
-	let aaa = document.getElementsByClassName('lang-' + currentLang);
-	for (let i=0; i < aaa.length; i++) {
-		let sss = aaa[i];
-		sss.classList.remove('visible');
-	}
-	console.log(currentLang);
-}
 
-let radioButtons = document.getElementsByName('lang');
-for (let i = 0; i < radioButtons.length; i++) {
-	radioButtons[i].addEventListener("click", function() {
-		let checkedButton = radioButtons[i].value;
-		getCurrentLanguage(checkedButton);
-		unvi();
-		console.log(checkedButton);
-	})
-}
+changeLang();
 
-function setUserLanguage(valueFromCheckedButton) {
-	let findSelectedLanguage = document.getElementsByClassName('lang-' + valueFromCheckedButton);
-	for (let i = 0; i < findSelectedLanguage.length; i++) {
-		let newLanguage = findSelectedLanguage[i];
-		newLanguage.classList.add('visible');
-	}
-}*/
+// $<prefix> == DOMElement
+var $save = document.querySelector('html body button#save')
+
+$save.addEventListener('click', function() {
+	localStorage.setItem('currentLang', getCurrentLanguage());
+});

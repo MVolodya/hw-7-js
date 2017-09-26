@@ -16,24 +16,23 @@ submitClick.addEventListener('click', function(event) {
 
 function createForm() {
 
-    let form = document.createElement('form');
-
+    let form     = document.createElement('form');
     let textForm = document.createTextNode("Form for validation");
 
     //input Age
-    let labelAge = document.createElement('label');
+    let labelAge     = document.createElement('label');
     let textLabelAge = document.createTextNode("Age");
-    let inputAge = document.createElement('input');
+    let inputAge     = document.createElement('input');
 
     //input Username
-    let labelUsername = document.createElement('label');
+    let labelUsername     = document.createElement('label');
     let textLabelUsername = document.createTextNode("Username");
-    let inputUsername = document.createElement('input');
+    let inputUsername     = document.createElement('input');
 
     //input Date
-    let labelDate = document.createElement('label');
+    let labelDate     = document.createElement('label');
     let textLabelDate = document.createTextNode("Date");
-    let inputDate = document.createElement('input');
+    let inputDate     = document.createElement('input');
 
     let inputSubmit = document.createElement('input');
 
@@ -95,16 +94,16 @@ function createForm() {
 }
 
 function createText() {
-    let divContainer = document.createElement('div');
+    let divContainer     = document.createElement('div');
     let divFormContainer = document.createElement('div');
-    let h1 = document.createElement("h1");
-    let p = document.createElement("p");
-    let textTitle = document.createTextNode("Task 1");
-    let textDescription = document.createTextNode("Do you like some jokes?");
+    let h1               = document.createElement("h1");
+    //let p                = document.createElement("p");
+    let textTitle        = document.createTextNode("Task 1");
+    //let textDescription  = document.createTextNode("Do you like some jokes?");
 
     let divButtonContainer = document.createElement('div');
-    let myAnchor = document.createElement('a');
-    let textButton = document.createTextNode("Back");
+    let myAnchor           = document.createElement('a');
+    let textButton         = document.createTextNode("Back");
 
     divButtonContainer.setAttribute('class', 'button-container');
     divContainer.setAttribute('class', 'container');
@@ -115,10 +114,10 @@ function createText() {
 
 
     h1.appendChild(textTitle);
-    p.appendChild(textDescription);
+    //p.appendChild(textDescription);
     myAnchor.appendChild(textButton);
     divContainer.appendChild(h1);
-    divContainer.appendChild(p);
+    //divContainer.appendChild(p);
     divContainer.appendChild(divFormContainer);
     divFormContainer.appendChild(createForm());
     divButtonContainer.appendChild(myAnchor);
@@ -130,13 +129,13 @@ function createText() {
 }
 
 function inputValidation() {
-    let inputAge = document.querySelector('#age').value;
+    let inputAge      = document.querySelector('#age').value;
     let inputUsername = document.querySelector('#username').value;
-    let inputDate = document.querySelector('#date').value;
+    let inputDate     = document.querySelector('#date').value;
 
-    inputAge = isNumber(inputAge);
+    inputAge      = isNumber(inputAge);
     inputUsername = isUsername(inputUsername);
-    inputDate = isCurrentDate(inputDate);
+    inputDate     = isCurrentDate(inputDate);
 
     console.log("inputAge", inputAge);
     console.log("inputUsername", inputUsername);
@@ -153,21 +152,21 @@ function inputValidation() {
 
 function isNumber(inputAge) {
     let regexpValueAge = /^\d+$/;
-    let checkValueAge = (regexpValueAge.test(inputAge) && (inputAge >= 0)) ? true : false;
+    let checkValueAge  = (regexpValueAge.test(inputAge) && (inputAge >= 0)) ? true : false;
     return checkValueAge;
 }
 
 function isUsername(inputUsername) {
     //let regexpValueUsername = /^user_(([0-9a-z-]+)?([@])?[0-9a-z-]+\.[a-z]+)?\w+$/;
     let regexpValueUsername = /^user_\S.+?$/;
-    let checkValueUsername = regexpValueUsername.test(inputUsername) ? true : false;
+    let checkValueUsername  = regexpValueUsername.test(inputUsername) ? true : false;
     return checkValueUsername;
 }
 
 function isCurrentDate(inputDate) {
-    let regexpValueDate = /^\d{2}\/\d{2}\/\d{4}$/;
+    let regexpValueDate  = /^\d{2}\/\d{2}\/\d{4}$/;
     let checkedValueDate = false;
-    let currentDate = new Date();
+    let currentDate      = new Date();
 
     if (regexpValueDate.test(inputDate)) {
         let splitValueDate = inputDate.split('/')
@@ -182,8 +181,8 @@ function isCurrentDate(inputDate) {
 
 function generateCurrentDate() {
     let currentDate = new Date();
-    let dd = currentDate.getDate();
-    let mm = currentDate.getMonth()+1; // The getMonth() method returns the month (from 0 to 11) for the specified date, according to local time.
+    let dd   = currentDate.getDate();
+    let mm   = currentDate.getMonth()+1; // The getMonth() method returns the month (from 0 to 11) for the specified date, according to local time.
     let yyyy = currentDate.getFullYear();
 
     dd = dd < 10 ? (dd = "0" + dd) : (dd);

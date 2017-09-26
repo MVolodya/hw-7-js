@@ -5,17 +5,170 @@
         <title>Homework 7</title>
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="icon" href="../img/favicon.ico" type="image/x-icon" sizes="16x16"/>
+        <link rel="icon" href="img/favicon.ico" type="image/x-icon" sizes="16x16"/>
     </head>
     <body>
         <div class="container">
+            <h1>Volodymyr Medvid</h1>
             <div class="button-container">
-                <a class="button button-go button-task-1" href="tasks/task_1.html">Task 1</a>
-                <a class="button button-go button-task-2" href="tasks/task_2.html">Task 2</a>
-                <a class="button button-go button-task-3" href="tasks/task_3.html">Task 3</a>
-                <a class="button button-go button-task-4" href="tasks/task_4.html">Task 4</a>
-                <a class="button button-go button-task-4" href="tasks/task_5.html">Task 5</a>
+                <div class="button button-task-1" data-task="1">Task 1</div>
+                <div class="button button-task-2" data-task="2">Task 2</div>
+                <div class="button button-task-3" data-task="3">Task 3</div>
+                <div class="button button-task-4" data-task="4">Task 4</div>
+                <div class="button button-task-5" data-task="5">Task 5</div>
+                <div class="button button-task-6" data-task="6">Task 6</div>
+                <div class="button button-task-7" data-task="7">Task 7</div>
+            </div>
+            <div class="tasks-container">
+                <div class="task-content active">
+                    <h3>Oops, try to select a task...</h3>
+                </div>
+                <div class="task-content task-1">
+                    <div class="button-container">
+                        <a class="button button-go button-task-1" href="tasks/task_1.html">Try me</a>
+                    </div>
+                    <ol>
+                        <li>(task "validation") Implement validation for form below</li>
+                    </ol>
+                    <div class="code-for-tasks">
+<pre>&lt;<span class="pl-ent">form</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>login<span class="pl-pds">"</span></span> <span class="pl-e">action</span>=<span class="pl-s"><span class="pl-pds">"</span>google.com<span class="pl-pds">"</span></span>&gt;
+   &lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text<span class="pl-pds">"</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>age<span class="pl-pds">"</span></span>&gt;
+   &lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text<span class="pl-pds">"</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>username<span class="pl-pds">"</span></span>&gt;
+   &lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text<span class="pl-pds">"</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>date<span class="pl-pds">"</span></span>&gt;
+   &lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>submit<span class="pl-pds">"</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">"</span>Validate Me<span class="pl-pds">"</span></span>&gt;
+&lt;/<span class="pl-ent">form</span>&gt;</pre>
+                    </div>
+                    <ul>
+                       <li>using JS create this form (by <code>document.createElement</code>) and append to <code>body</code></li>
+                       <li>
+                          on form submit you need validate below fields
+                          <ul>
+                             <li>
+                                <code>age</code> should contains only numbers
+                                <ul>
+                                   <li>(pass) "123"</li>
+                                   <li>(pass) "0"</li>
+                                   <li>(pass) "008946798576948567948576948756984756"</li>
+                                   <li>(failed) "test"</li>
+                                   <li>(failed) "-1"</li>
+                                   <li>(failed) " 0"</li>
+                                   <li>(failed) "10e5"</li>
+                                </ul>
+                             </li>
+                             <li>
+                                <code>username</code> should start from "user_"
+                                <ul>
+                                   <li>(pass) <strong>user_</strong>test</li>
+                                   <li>(pass) <strong>user_</strong>213kjasd</li>
+                                   <li>(pass) <strong>user_</strong>@gmail.com</li>
+                                   <li>(failed) john</li>
+                                   <li>(failed) _user_test</li>
+                                   <li>(failed) testuser_test</li>
+                                </ul>
+                             </li>
+                             <li>field <code>date</code> should contain current date (format <code>dd/mm/yyyy</code>)</li>
+                             <li>if data is not valid, alert message <code>your data is invalid</code></li>
+                          </ul>
+                       </li>
+                       <li>submit to github's gh-pages</li>
+                    </ul>
+                </div>
+                <div class="task-content task-2">
+                    <div class="button-container">
+                        <a class="button button-go button-task-2" href="tasks/task_2.html">Try me</a>
+                    </div>
+                    <ol start="2">
+                        <li>(task "parallax") fix parallax</li>
+                    </ol>
+                    <ul>
+                        <li>the broken version is <a href="https://jsfiddle.net/g2wkha1u/2/">https://jsfiddle.net/g2wkha1u/2/</a></li>
+                        <li>made the same as on <a href="http://materializecss.com/parallax-demo.html">http://materializecss.com/parallax-demo.html</a></li>
+                    </ul>
+                </div>
+                <div class="task-content task-3">
+                    <div class="button-container">
+                        <a class="button button-go button-task-3" href="tasks/task_3.html">Try me</a>
+                    </div>
+                    <ol start="3">
+                        <li>(task "os message") show message per user's system</li>
+                    </ol>
+                    <ul>
+                        <li><a href="https://jsfiddle.net/snsyLb3a/">https://jsfiddle.net/snsyLb3a/</a></li>
+                    </ul>
+                </div>
+                <div class="task-content task-4">
+                    <div class="button-container">
+                        <a class="button button-go button-task-4" href="tasks/task_4.html">Try me</a>
+                    </div>
+                    <ol start="4">
+                        <li>(task "localization") create multi-local app</li>
+                    </ol>
+                    <ul>
+                        <li><a href="https://jsfiddle.net/c97cd2fo/6/">https://jsfiddle.net/c97cd2fo/6/</a></li>
+                        <li>using location.hash, or cookie, or localStorage</li>
+                    </ul>
+                </div>
+                <div class="task-content task-5">
+                    <div class="button-container">
+                        <a class="button button-go button-task-5" href="tasks/task_5.html">Try me</a>
+                    </div>
+                    <ol start="5">
+                        <li>(task "stop & prevent events") what is difference between event.stopPropagation and event.preventDefault</li>
+                    </ol>
+                    <ul>
+                        <li><a href="https://jsfiddle.net/hkL7380z/2/">https://jsfiddle.net/hkL7380z/2/</a></li>
+                    </ul>
+                </div>
+                <div class="task-content task-6">
+                    <div class="button-container">
+                        <a class="button button-go button-task-6" href="tasks/task_6.html">Try me</a>
+                    </div>
+                    <ol start="6">
+                        <li>(task "player navigation") Fix the player navigation</li>
+                    </ol>
+                    <ul>
+                        <li><a href="https://jsfiddle.net/5038a10a/7/">https://jsfiddle.net/5038a10a/7/</a></li>
+                        <li>Implement moving up & down (by pressing up/down keys)</li>
+                        <li>Implement the "fire" action (by pressing the "space" or "enter" keys)</li>
+                    </ul>
+                </div>
+                <div class="task-content task-7">
+                    <div class="button-container">
+                        <a class="button button-go button-task-7" href="tasks/task_7.html">Try me</a>
+                    </div>
+                    <ol start="7">
+                        <li>(task "list of users") Create the dynamic list of employees on the factory</li>
+                    </ol>
+                    <ul>
+                        <li>project consists of <code>css/styles.css</code>, <code>js/app.js</code> and <code>index.html</code></li>
+                        <li>the <code>index.html</code> consists of</li>
+                    </ul>
+                    <div class="code-for-tasks">
+<pre>&lt;<span class="pl-ent">ul</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>employeeList<span class="pl-pds">"</span></span>&gt;
+   &lt;<span class="pl-ent">li</span>&gt;
+      &lt;<span class="pl-ent">span</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>employeeFirstName<span class="pl-pds">"</span></span>&gt;John&lt;<span class="pl-ent">/span</span>&gt;
+      &lt;<span class="pl-ent">span</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>employeeLastName<span class="pl-pds">"</span></span>&gt;Doe&lt;<span class="pl-ent">/span</span>&gt;
+      &lt;<span class="pl-ent">span</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>employeeSalary<span class="pl-pds">"</span></span>&gt;$ 1000&lt;<span class="pl-ent">/span</span>&gt;
+      &lt;<span class="pl-ent">span</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>employeePosition<span class="pl-pds">"</span></span>&gt;Manager&lt;<span class="pl-ent">/span</span>&gt;
+   &lt;<span class="pl-ent">/li</span>&gt;
+&lt;<span class="pl-ent">/ul</span>&gt;
+&lt;<span class="pl-ent">button</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>addEmployee<span class="pl-pds">"</span></span>&gt;Add New emplyee&lt;<span class="pl-ent">/button</span>&gt;</pre>
+                    </div>
+                    <ul>
+                        <li>requirements</li>
+                        <ul>
+                            <li>Every List Item Should Contain first name, last name, salary and position</li>
+                            <li>Write the function That adds a new employee to the list (using Prompt or html input elements on your own)</li>
+                            <li>Create the field that will indicate number of employees, and average salary after each entry of new row</li>
+                            <li>Limit number of employees to 10</li>
+                            <li>Add possibility to set the limit of employees</li>
+                            <li>Disallow adding new employees when avg. salary reaches $ 2000</li>
+                            <li>When Adding Employee, check existing employees first name/last name, disallow duplicates</li>
+                        </ul>
+                    </ul>
+                </div>
             </div>
         </div>
     </body>
+    <script type="text/javascript" src="js/main.js"></script>
 </html>

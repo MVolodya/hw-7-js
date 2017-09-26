@@ -3,7 +3,6 @@ $ocean:  #416dea;
 $grass: #3dd28d;
 $sun: #feee7d;
 $salmon: #F32C52;
-$sun: #feee7d;
 $alge: #7999a9;
 $flower: #353866;
 $coal: #202129;
@@ -139,7 +138,6 @@ h1.h1-parallax {
 }
 
 p.p-content {
-    font-size: 18px;
     margin: 0 0 45px 0;
 }
 
@@ -169,10 +167,13 @@ p a {
     background: red;
     background: url(https://images.unsplash.com/photo-1482282375187-a7e57f76026d?dpr=1&auto=compress,format&fit=crop&w=1458&h=&q=80&cs=tinysrgb&crop=);
     height: 500px;
+
+    /*
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    */
 }
 //------------TASK 3 ---------------
 .download-message {
@@ -212,6 +213,7 @@ p a {
 .button-container {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .button {
@@ -223,6 +225,7 @@ p a {
     position: relative;
     text-decoration: none;
     border-radius: 5px;
+    cursor: pointer;
     box-shadow: 0 5px 5px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 
@@ -307,25 +310,83 @@ p a {
 }
 .button-task-3 {
     color: $white;
-    background: $grass;
+    background: $alge;
     &:hover {
         transition: all 1s ease;
-        background: #1cb870;
+        background: #5c8193;
     }
 }
 .button-task-4 {
     color: $white;
-    background: $grass;
+    background: $salmon;
     &:hover {
         transition: all 1s ease;
-        background: #1cb870;
+        background: #d92c4d;
     }
 }
 .button-task-5 {
     color: $white;
-    background: $grass;
+    background: $flower;
     &:hover {
         transition: all 1s ease;
-        background: #1cb870;
+        background: #2a2d59;
     }
+}
+.button-task-6 {
+    color: $dark;
+    background: $sun;
+    &:hover {
+        transition: all 1s ease;
+        background: #ffe951;
+    }
+}
+.button-task-7 {
+    color: $dark;
+    background: $sun;
+    &:hover {
+        transition: all 1s ease;
+        background: #ffe951;
+    }
+}
+.pl-ent {
+    color: #22863a;
+}
+.pl-e {
+    color: #6f42c1;
+}
+.pl-s {
+    color: #04428b;
+}
+
+.tasks-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 30px;
+    color: rgb(22, 22, 22);
+    font-weight: 400;
+    line-height: 1.5;
+}
+.code-for-tasks {
+    background: #eaeaea;
+    padding: 15px;
+    border-radius: 3px;
+}
+code {
+    background-color: #eaeaea;
+    border-radius: 3px;
+    padding: 0px 5px 0 5px;
+}
+.task-content {
+    display: none;
+}
+.task-content.active {
+    width: 50%;
+    background: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    padding: 20px;
+    margin-bottom: 10px;
+    display: block;
 }

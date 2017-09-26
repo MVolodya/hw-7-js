@@ -100,7 +100,6 @@ h1.h1-parallax {
   background: rgba(255, 255, 255, 0.5); }
 
 p.p-content {
-  font-size: 18px;
   margin: 0 0 45px 0; }
 
 p a {
@@ -124,10 +123,12 @@ p a {
   background: red;
   background: url(https://images.unsplash.com/photo-1482282375187-a7e57f76026d?dpr=1&auto=compress,format&fit=crop&w=1458&h=&q=80&cs=tinysrgb&crop=);
   height: 500px;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; }
+  /*
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    */ }
 
 .download-message {
   display: none; }
@@ -158,7 +159,8 @@ p a {
 
 .button-container {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  flex-wrap: wrap; }
 
 .button {
   text-align: center;
@@ -169,6 +171,7 @@ p a {
   position: relative;
   text-decoration: none;
   border-radius: 5px;
+  cursor: pointer;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
   .button:hover {
@@ -234,21 +237,76 @@ p a {
 
 .button-task-3 {
   color: #FFFFFF;
-  background: #3dd28d; }
+  background: #7999a9; }
   .button-task-3:hover {
     transition: all 1s ease;
-    background: #1cb870; }
+    background: #5c8193; }
 
 .button-task-4 {
   color: #FFFFFF;
-  background: #3dd28d; }
+  background: #F32C52; }
   .button-task-4:hover {
     transition: all 1s ease;
-    background: #1cb870; }
+    background: #d92c4d; }
 
 .button-task-5 {
   color: #FFFFFF;
-  background: #3dd28d; }
+  background: #353866; }
   .button-task-5:hover {
     transition: all 1s ease;
-    background: #1cb870; }
+    background: #2a2d59; }
+
+.button-task-6 {
+  color: #161616;
+  background: #feee7d; }
+  .button-task-6:hover {
+    transition: all 1s ease;
+    background: #ffe951; }
+
+.button-task-7 {
+  color: #161616;
+  background: #feee7d; }
+  .button-task-7:hover {
+    transition: all 1s ease;
+    background: #ffe951; }
+
+.pl-ent {
+  color: #22863a; }
+
+.pl-e {
+  color: #6f42c1; }
+
+.pl-s {
+  color: #04428b; }
+
+.tasks-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 30px;
+  color: #161616;
+  font-weight: 400;
+  line-height: 1.5; }
+
+.code-for-tasks {
+  background: #eaeaea;
+  padding: 15px;
+  border-radius: 3px; }
+
+code {
+  background-color: #eaeaea;
+  border-radius: 3px;
+  padding: 0px 5px 0 5px; }
+
+.task-content {
+  display: none; }
+
+.task-content.active {
+  width: 50%;
+  background: #FFFFFF;
+  border-radius: 5px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  padding: 20px;
+  margin-bottom: 10px;
+  display: block; }
