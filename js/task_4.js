@@ -1,5 +1,5 @@
-var applyLanguage = function (lang) {
-	alert('Your language is: ' + lang);
+var applyLanguage = function (username, lang) {
+	alert(username + ' your language is: ' + lang);
 }
 
 var getCurrentLanguage = function () {
@@ -11,6 +11,43 @@ var getCurrentLanguage = function () {
 
 	return language;
 }
+
+var inputBox = document.getElementById('username');
+var spanUser = document.getElementById('print-username');
+
+var getUsername = function () {
+
+	var savedUsername = localStorage.getItem('username');
+
+	if (!savedUsername || savedUsername  == "undefined") {
+		inputBox.setAttribute('value', 'Volodymyr');
+		spanUser.innerHTML = inputBox.value;
+	} else {
+		inputBox.setAttribute('value', savedUsername);
+		spanUser.innerHTML = savedUsername;
+	}
+
+	inputBox.onkeyup = function() {
+		inputBox.maxLength = "15"
+		spanUser.innerHTML = inputBox.value;
+	}
+
+	var inputValue = inputBox.value;
+	if (inputValue != "") {
+
+		spanUser.innerHTML = inputBox.value;
+		return inputValue;
+	} else {
+			inputBox.setAttribute('value', savedUsername);
+		var a = inputBox.value;
+		spanUser.innerHTML = a;
+		return a;
+	}
+
+}
+
+getUsername();
+
 
 var radioButtons = document.querySelectorAll('input[type="radio"]');
 
@@ -39,15 +76,16 @@ function changeLang() {
 		// langEl.style.display = 'inline';
 		langEl.classList.add('visible');
 	}
-	applyLanguage(currentLang);
+	applyLanguage(getUsername(), currentLang);
 }
 
 changeLang();
 
 // $<prefix> == DOMElement
-var $save = document.querySelector('html body button#save')
+var $save = document.querySelector('html body div#save')
 
 $save.addEventListener('click', function() {
-	applyLanguage(getCurrentLanguage());
+	applyLanguage(getUsername(), getCurrentLanguage());
 	localStorage.setItem('currentLang', getCurrentLanguage());
+	localStorage.setItem('username', getUsername());
 });

@@ -31,7 +31,8 @@ h2 {
 
 h2.form-title {
   margin: 20px 0 40px 0;
-  position: relative; }
+  position: relative;
+  text-align: left; }
   h2.form-title:after {
     content: '';
     width: 40px;
@@ -47,7 +48,8 @@ p {
   text-align: justify;
   color: rgba(22, 22, 22, 0.6);
   font-weight: 400;
-  line-height: 1.5; }
+  line-height: 1.5;
+  padding-bottom: 5px; }
 
 .form-container {
   display: flex;
@@ -141,7 +143,8 @@ p a {
   display: none; }
 
 .download-message.visible {
-  display: block; }
+  display: block;
+  padding: 20px 0 45px 0; }
 
 .lang {
   display: none; }
@@ -149,10 +152,38 @@ p a {
 .lang.visible {
   display: inline; }
 
+.switch-content {
+  display: flex;
+  margin: 20px auto;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center; }
+
+input[type="text"].task-4-username {
+  font-size: 40px;
+  padding: 15px 25px 15px 25px;
+  border-radius: 5px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+  input[type="text"].task-4-username:focus {
+    border-bottom: 2px solid #F32C52; }
+
+#languages {
+  margin: 10px 0 40px 0;
+  font-size: 25px; }
+
+input[type="radio"] {
+  width: 20px;
+  height: 20px; }
+
+#welcome-message {
+  font-size: 40px;
+  margin: 30px 0 50px 0; }
+
 #box1 {
   background: red;
   width: 200px;
-  height: 200px; }
+  height: 200px;
+  margin: 20px 0 50px 0; }
 
 #box2 {
   background: green;
@@ -163,6 +194,60 @@ p a {
   background: blue;
   width: 100px;
   height: 100px; }
+
+.task-5-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.task-7-content {
+  display: flex;
+  margin: 20px 0 20px 0; }
+
+.left-side, .right-side {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px; }
+
+.text-box {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 35px;
+  width: 58%;
+  border-radius: 5px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+
+.text-left {
+  margin: 0; }
+
+.text-box input[type="text"]:focus {
+  border-bottom: 1px solid #ffe951; }
+
+.employeeList li {
+  padding: 5px; }
+
+.left-text input[type="number"] {
+  width: 40px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #bebebe; }
+
+input.submit-task-7 {
+  color: #161616;
+  background: #feee7d; }
+  input.submit-task-7:hover {
+    transition: all 1s ease;
+    background: #ffe951; }
+
+.title {
+  display: flex;
+  justify-content: space-between; }
+
+.left-text {
+  margin: 20px 0 40px 0; }
 
 .text-container {
   margin-top: 60px; }

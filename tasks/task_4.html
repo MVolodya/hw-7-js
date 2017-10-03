@@ -3,38 +3,40 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="icon" href="../img/favicon.ico" type="image/x-icon" sizes="16x16"/>
         <title>Task 4</title>
     </head>
     <body>
         <div class="container">
             <h1>Task 4</h1>
-            <div class="username-input">
-                <label for="username">
-                    <input id="username" type="text" name="username">
-                </label>
+            <div class="switch-content">
+                <div id="languages">
+                    <label>
+                        <input type="radio" name="lang" value="ua">UA
+                    </label>
+                    <label>
+                        <input type="radio" name="lang" value="ru">RU
+                    </label>
+                    <label>
+                        <input type="radio" name="lang" value="eng">ENG
+                    </label>
+                </div>
+                <div class="username-input">
+                    <input id="username" class="task-4-username" type="text" name="username">
+                </div>
+                <div id="welcome-message">
+                    <span class="lang lang-ua">Привіт,</span>
+                    <span class="lang lang-ru">Привет,</span>
+                    <span class="lang lang-eng">Hello,</span>
+                    <span id="print-username" class="username"></span>
+                    <span class="lang lang-ua">! Раді тебе бачити!</span>
+                    <span class="lang lang-ru">! Рад тебя видеть!</span>
+                    <span class="lang lang-eng">! Glad to see you!</span>
+                </div>
+                <div id="save" class="button button-task-4">Save</div>
+                <a class="button button-back button-task-4" href="../index.html">Back</a>
             </div>
-            <div id="languages">
-                <label>
-                    <input type="radio" name="lang" value="ua">UA
-                </label>
-                <label>
-                    <input type="radio" name="lang" value="ru">RU
-                </label>
-                <label>
-                    <input type="radio" name="lang" value="eng">ENG
-                </label>
-            </div>
-            <div id="welcome-message">
-                <span class="lang lang-ua">Привіт,</span>
-                <span class="lang lang-ru">Привет,</span>
-                <span class="lang lang-eng">Hello,</span>
-                <span class="username">username!</span>
-                <span class="lang lang-ua">Раді тебе бачити!</span>
-                <span class="lang lang-ru">Рад тебя видеть!</span>
-                <span class="lang lang-eng">Glad to see you!</span>
-            </div>
-            <button id="save">Save</button>
         </div>
     </body>
     <script type="text/javascript" src="../js/task_4.js"></script>

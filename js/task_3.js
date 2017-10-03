@@ -18,3 +18,25 @@ for (let key in navigatorMessageMap) {
         }
     }
 }
+
+let idInformation = document.getElementById('information');
+
+renderContent("Browser Version: ", navigator.appVersion);
+renderContent("Platform: ", navigator.platform);
+renderContent("Browser Language: ", navigator.language);
+renderContent("Browser Online: ", navigator.onLine);
+
+
+function renderContent(text, data) {
+    let strong = document.createElement("strong");
+    let p = document.createElement("p");
+    let t = document.createTextNode(text);
+    let d = document.createTextNode(data);
+
+    strong.appendChild(t);
+    p.appendChild(strong);
+    p.appendChild(d);
+    result = idInformation.appendChild(p);
+
+    return result;
+}
