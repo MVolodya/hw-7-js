@@ -38,7 +38,7 @@ var getUsername = function () {
 		spanUser.innerHTML = inputBox.value;
 		return inputValue;
 	} else {
-			inputBox.setAttribute('value', savedUsername);
+		inputBox.setAttribute('value', savedUsername);
 		var a = inputBox.value;
 		spanUser.innerHTML = a;
 		return a;

@@ -14,10 +14,10 @@
                 <div class="left-side">
                     <div class="text-box">
                         <h2 class="form-title">New employee</h2>
-                        <input type="text" name="first-name" placeholder="First name">
-                        <input type="text" name="last-name" placeholder="Last name">
-                        <input type="text" name="salary" placeholder="Salary">
-                        <input type="text" name="position" placeholder="Position">
+                        <input id="first-name" type="text" name="first-name" placeholder="First name" maxlength="10">
+                        <input id="last-name" type="text" name="last-name" placeholder="Last name" maxlength="10">
+                        <input id="salary" type="text" name="salary" placeholder="Salary" maxlength="10">
+                        <input id="position" type="text" name="position" placeholder="Position" maxlength="15">
                         <input class="custom-submit-input submit-task-7" type="submit" value="Add new emplyee">
                     </div>
                 </div>
@@ -29,50 +29,15 @@
                             </div>
                             <div class="left-text">
                                 <label for="quantity">max: </label>
-                                <input type="number" name="quantity" min="10" max="100" value="10">
+                                <input type="number" name="quantity" min="1" max="100" value="10">
                             </div>
                         </div>
                         <div class="title">
                             <p class="text-left">Employees: <span id="number-of-employees">0</span></p>
                             <p class="text-left">Average salary: $<span id="average-salary">0</span></p>
                         </div>
-                        <ul class="employeeList">
-                            <li>
-                                <span class="employeeFirstName">John</span>
-                                <span class="employeeLastName">Doe</span>
-                                <span class="employeeSalary">$1000</span>
-                                <span class="employeePosition">Manager</span>
-                            </li>
-                            <li>
-                                <span class="employeeFirstName">John</span>
-                                <span class="employeeLastName">Doe</span>
-                                <span class="employeeSalary">$1000</span>
-                                <span class="employeePosition">Manager</span>
-                            </li>
-                            <li>
-                                <span class="employeeFirstName">John</span>
-                                <span class="employeeLastName">Doe</span>
-                                <span class="employeeSalary">$1000</span>
-                                <span class="employeePosition">Manager</span>
-                            </li>
-                            <li>
-                                <span class="employeeFirstName">John</span>
-                                <span class="employeeLastName">Doe</span>
-                                <span class="employeeSalary">$1000</span>
-                                <span class="employeePosition">Manager</span>
-                            </li>
-                            <li>
-                                <span class="employeeFirstName">John</span>
-                                <span class="employeeLastName">Doe</span>
-                                <span class="employeeSalary">$1000</span>
-                                <span class="employeePosition">Manager</span>
-                            </li>
-                            <li>
-                                <span class="employeeFirstName">John</span>
-                                <span class="employeeLastName">Doe</span>
-                                <span class="employeeSalary">$1000</span>
-                                <span class="employeePosition">Manager</span>
-                            </li>
+                        <ul id="list-of-emploee" class="employeeList">
+
                         </ul>
                     </div>
                 </div>
