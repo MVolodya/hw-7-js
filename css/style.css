@@ -252,6 +252,13 @@ input.submit-task-7 {
 .left-text {
   margin: 20px 0 40px 0; }
 
+button.close {
+  background: #F32C52;
+  border: none;
+  color: #fff;
+  float: right;
+  cursor: pointer; }
+
 .text-container {
   margin-top: 60px; }
 
