@@ -48,10 +48,11 @@ document.body.onkeydown = function (e) {
 
         space.appendChild(div);
 
+        
 
+        speedId++;
 
-        fireId++;
     }
 
-    
+
 }

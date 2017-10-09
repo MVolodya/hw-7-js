@@ -87,6 +87,7 @@ function checkSalary(arr) {
     let salary = document.getElementById('average-salary');
 
     let averageS = 0;
+    let maxAverageSalary = 2000;
 
     for (let i = 0; i < arr.length; i++) {
         averageS += parseInt(arr[i].salary);
@@ -98,7 +99,7 @@ function checkSalary(arr) {
         salary.innerHTML = "";
         let textAverageSalary = document.createTextNode('0');
         salary.appendChild(textAverageSalary);
-    } else if (result >= 2000) {
+    } else if (result >= maxAverageSalary) {
         alert("Sorry, average salary is higher than 2000$");
         arr.pop();
     } else {
