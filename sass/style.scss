@@ -258,6 +258,37 @@ input[type="radio"] {
     align-items: center;
 }
 
+//------------TASK 6 ---------------
+div#player {
+    width: 100px;
+    height: 75px;
+    background: red;
+    transition: all 0.3s ease-out 0s;
+    position: absolute;
+    background: url("../img/pblue.png");
+    background-repeat: no-repeat;
+  }
+
+div#space {
+    width: 1000px;
+    height: 500px;
+    position: relative;
+    margin: 0 auto;
+    //border: solid 2px #676767;
+    border-radius: 5px;
+    box-shadow: 2px 17px 38px rgba(0,0,0,0.30), -2px 8px 12px rgba(0,0,0,0.22);
+    background-image: url("../img/blue.png");
+}
+div.fire {
+    width: 13px;
+    height: 37px;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    background: url("../img/laserBlue02.png");
+    background-repeat: no-repeat;
+}
+
 //------------TASK 7 ---------------
 .task-7-content {
     display: flex;

@@ -4,7 +4,7 @@ var onClickSP = function (e) {
 	e.stopPropagation();
 	$el.style.backgroundColor = 'yellow';
 	alert('I\'m stopPropagation!');
-	$el.style.backgroundColor = '';
+	//$el.style.backgroundColor = '';
 }
 
 var onClickPD = function (event) {
