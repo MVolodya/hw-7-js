@@ -112,7 +112,7 @@ function checkSalary(arr) {
 }
 
 function createList(arr) {
-    let list = document.getElementById('list-of-emploee');
+    let list = document.getElementById('list-of-employee');
     list.innerHTML = "";
 
     for (let i = 0; i < arr.length; i++) {
