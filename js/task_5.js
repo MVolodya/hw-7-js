@@ -1,16 +1,16 @@
 
 var onClickSP = function (e) {
-	var $el = e.target;
-	e.stopPropagation();
-	$el.style.backgroundColor = 'yellow';
-	alert('I\'m stopPropagation!');
-	//$el.style.backgroundColor = '';
+    var $el = e.target;
+    e.stopPropagation();
+    $el.style.backgroundColor = 'yellow';
+    alert('I\'m stopPropagation!');
+    //$el.style.backgroundColor = '';
 }
 
 var onClickPD = function (event) {
-	var $link = event.target;
-	event.preventDefault();
-	alert('I\'m preventDefault!');
+    var $link = event.target;
+    event.preventDefault();
+    alert('I\'m preventDefault!');
 }
 
 document.body.onclick = onClickSP;
