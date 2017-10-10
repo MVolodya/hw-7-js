@@ -189,8 +189,9 @@ function onCloseButtonClick() {
     let inputValue = document.querySelector('input[type=number]');
 
     let button = this;
-    let parent = button.parentElement;
-    parent.style.display = 'none';
+    let parent = button.parentElement; //parentNode
+    parent.parentNode.removeChild(this.parentNode);
+
 
     for(let i = userArray.length - 1; i >= 0; i--) {
         if(userArray[i].id === parent.id) {
